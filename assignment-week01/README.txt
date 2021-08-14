@@ -1,0 +1,1 @@
+This directory contains short C++ problems for written assignment on week 1. 

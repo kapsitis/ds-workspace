@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+
+
+CMakeCache.txt
+*/CMakeFiles/*
+*/.vscode/settings.json
+*.vcxproj
+*.vcxproj.filters
+*/

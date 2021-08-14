@@ -1,0 +1,1 @@
+This directory contains Programming Task 2.2. Its description will be provided in ORTUS.
