@@ -4,7 +4,7 @@
 #echo "Pulling from git..."
 #git clone git@github.com:username/ds-workspace-username.git
 
-declare -a tsts=("01" "02" "03" "04" "05" "06" "07" "08" "09" "10")
+declare -a tsts=("01" "02" "03" "04" "05")
 
 cd lab1-1
 echo "Compiling..."
