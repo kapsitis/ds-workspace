@@ -14,5 +14,5 @@ int main() {
      myList.head() = 17;
      myList.tail() = 18;
      // The following line should return "[17, 4, 3, 18]": 
-     myList.toString();
+     cout << myList.toString();
 }
