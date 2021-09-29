@@ -63,6 +63,7 @@ void CircularList::movePrev() {
  * After this method: "[5, 0, 1, 2, 3, 4]"
  */
 void CircularList::pushFront(int val) {
+    cerr << "LOG: pushFront(" << val << ")" << endl;
 }
 
 /**       
