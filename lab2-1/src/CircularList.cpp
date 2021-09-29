@@ -1,3 +1,4 @@
+#include <iostream>
 #include <stdexcept>
 #include "CircularList.h"
 
@@ -93,6 +94,7 @@ int CircularList::getSize() {
  * After this method: [1, 2, 11, 3, 4]
  */
 void CircularList::insertAt(int pos, int val) {
+    cerr << "LOG: insertAt(" << pos << ", " << val << ")" << endl;
 }
 
 /**
@@ -101,6 +103,7 @@ void CircularList::insertAt(int pos, int val) {
  * (The tail stays where it was; if last element is erased, it moves back by 1)
  */
 void CircularList::eraseAt(int pos) {
+    cerr << "LOG: eraseAt(" << pos << ")" << endl;
 }
 
 /**
@@ -108,4 +111,5 @@ void CircularList::eraseAt(int pos) {
  * After this method: [1, 2, 11, 3, 4]
  */
 void CircularList::assignAt(int pos, int val) {
+    cerr << "LOG: assignAt(" << pos << ", " << val << ")" << endl;
 }

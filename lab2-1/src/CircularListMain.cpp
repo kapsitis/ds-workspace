@@ -5,6 +5,7 @@ using namespace ds_course;
 using namespace std;
 
 int main() {
+     cout << "Hello from CircularListMain" << endl;
      CircularList myList; 
      // initialize with at least 2 elements
      myList.pushFront(2);
