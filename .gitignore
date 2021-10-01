@@ -39,3 +39,4 @@ CMakeCache.txt
 *.vcxproj
 *.vcxproj.filters
 */build/*
+GRADES*
