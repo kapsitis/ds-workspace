@@ -36,7 +36,7 @@ fi
 #######################################################
 
 # Remove GRADES file (will append to it later on)
-rm -f GRADES.txt
+rm -f GRADES-LAB1.txt
 
 cd lab1-1
 make clean
@@ -65,12 +65,12 @@ do
         # If the diff command found that two files are the same
         if [ $? == "0" ]
         then
-          echo "Test${tt}.${i}: PASS" >> ../GRADES.txt
+          echo "Test${tt}.${i}: PASS" >> ../GRADES-LAB1.txt
         else
-          echo "Test${tt}.${i}: FAIL" >> ../GRADES.txt
+          echo "Test${tt}.${i}: FAIL" >> ../GRADES-LAB1.txt
         fi
       else
-        echo "Test${tt}.${i}: TIMEOUT" >> ../GRADES.txt
+        echo "Test${tt}.${i}: TIMEOUT" >> ../GRADES-LAB1.txt
       fi        
     done
   else 
@@ -78,7 +78,7 @@ do
     echo "sample${tt}.cpp did not build"
     for i in "${tsts[@]}"
     do
-      echo "Test${tt}.${i}: ERROR" >> ../GRADES.txt
+      echo "Test${tt}.${i}: ERROR" >> ../GRADES-LAB1.txt
     done
   fi
   echo "------------------------"
@@ -108,9 +108,9 @@ then
     grep -i "$(head -1 test6.${i}.out.txt)" expected6.${i}.txt    
     if [ $? == "0" ]
     then
-      echo "Test6.${i}: PASS" >> ../GRADES.txt
+      echo "Test6.${i}: PASS" >> ../GRADES-LAB1.txt
     else
-      echo "Test6.${i}: FAIL" >> ../GRADES.txt
+      echo "Test6.${i}: FAIL" >> ../GRADES-LAB1.txt
     fi
   done
 else 
@@ -118,7 +118,7 @@ else
   echo "sample6.cpp did not build"
   for i in "${tsts[@]}"
   do
-    echo "Test6.${i}: ERROR" >> ../GRADES.txt
+    echo "Test6.${i}: ERROR" >> ../GRADES-LAB1.txt
   done    
 fi
 echo "------------------------"
