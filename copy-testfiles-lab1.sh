@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cp run-lab1-tests.sh $1/
+cp run-tests-lab1.sh $1/
 
 cp lab1-1/Makefile $1/lab1-1/
 cp lab1-1/test*.txt $1/lab1-1/
