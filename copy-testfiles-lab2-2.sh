@@ -1,9 +1,16 @@
 #!/bin/bash
 
+if [[ $# -eq 0 ]] ; then
+    echo 'specify (relative) student workspace directory'
+    exit 0
+fi
+
 # Remove the last slash character, if it exists
 targetDir=${1%/}
 
 cp run-tests-lab2-2.sh ${targetDir}/
+cp run-plain-lab2-2.sh ${targetDir}/
+
 
 # Create target directory, if it does not exist
 mkdir -p $1/lab2-2/
@@ -11,6 +18,7 @@ mkdir -p $1/lab2-2/
 cp lab2-2/CMakeLists.txt ${targetDir}/lab2-2/
 cp lab2-2/test*.txt ${targetDir}/lab2-2/
 cp lab2-2/expected*.txt ${targetDir}/lab2-2/
+cp lab2-2/Makefile ${targetDir}/lab2-2/
 
 # The subdirectory $1/lab2-2/src should already contain 3 files:
 # ${targetDir}/lab2-2/src/CircularList.cpp
