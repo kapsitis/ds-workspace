@@ -1,0 +1,2 @@
+stringTree  
+( Hotel ( Lima ( Mike ( Oscar November ) ) ( Juliett India ) ) ( Echo ( Foxtrot Golf ) ( Bravo Delta ) ) )

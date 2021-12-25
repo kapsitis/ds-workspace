@@ -36,7 +36,7 @@ fi
 #######################################################
 
 # Remove GRADES file (will append to it later on)
-rm -f GRADES.txt
+rm -f GRADES-LAB1.txt
 
 cd lab1-1
 make clean
@@ -65,12 +65,12 @@ do
         # If the diff command found that two files are the same
         if [ $? == "0" ]
         then
-          echo "Test${tt}.${i}: PASS" >> ../GRADES.txt
+          echo "Test${tt}.${i}: PASS" >> ../GRADES-LAB1.txt
         else
-          echo "Test${tt}.${i}: FAIL" >> ../GRADES.txt
+          echo "Test${tt}.${i}: FAIL" >> ../GRADES-LAB1.txt
         fi
       else
-        echo "Test${tt}.${i}: TIMEOUT" >> ../GRADES.txt
+        echo "Test${tt}.${i}: TIMEOUT" >> ../GRADES-LAB1.txt
       fi        
     done
   else 
@@ -78,7 +78,7 @@ do
     echo "sample${tt}.cpp did not build"
     for i in "${tsts[@]}"
     do
-      echo "Test${tt}.${i}: ERROR" >> ../GRADES.txt
+      echo "Test${tt}.${i}: ERROR" >> ../GRADES-LAB1.txt
     done
   fi
   echo "------------------------"
@@ -104,21 +104,27 @@ then
   for i in "${tsts[@]}"
   do
     echo "----- test6.${i}.txt -----"
-    ./sample6 < test6.${i}.txt > test6.${i}.out.txt
-    grep -i "$(head -1 test6.${i}.out.txt)" expected6.${i}.txt    
+    timeout 10 ./sample6 < test6.${i}.txt > test6.${i}.out.txt
     if [ $? == "0" ]
     then
-      echo "Test6.${i}: PASS" >> ../GRADES.txt
+      echo >> test6.${i}.out.txt
+      grep -i "$(head -1 test6.${i}.out.txt)" expected6.${i}.txt    
+      if [ $? == "0" ]
+      then
+        echo "Test6.${i}: PASS" >> ../GRADES-LAB1.txt
+      else
+        echo "Test6.${i}: FAIL" >> ../GRADES-LAB1.txt
+      fi  
     else
-      echo "Test6.${i}: FAIL" >> ../GRADES.txt
-    fi
+      echo "Test${tt}.${i}: TIMEOUT" >> ../GRADES-LAB1.txt
+    fi            
   done
 else 
   # Executable was not created by "make" command
   echo "sample6.cpp did not build"
   for i in "${tsts[@]}"
   do
-    echo "Test6.${i}: ERROR" >> ../GRADES.txt
+    echo "Test6.${i}: ERROR" >> ../GRADES-LAB1.txt
   done    
 fi
 echo "------------------------"
@@ -132,3 +138,13 @@ echo "Cleaning up..."
 #sudo rm -fr ds-workspace-username/
 echo
 echo "Done!"
+
+cd ..
+sleep 0.5
+
+grade11=$(grep -E "^Test(1|2|3).*PASS" GRADES-LAB1.txt | wc -l)
+grade12=$(grep -E "^Test(4|5|6).*PASS" GRADES-LAB1.txt | wc -l)
+
+echo "Grade 1-1 is ${grade11} out of 15" 
+echo "Grade 1-2 is ${grade12} out of 15" 
+
