@@ -6,11 +6,13 @@ OBJ_FILES := $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRC_FILES))
 CC := g++
 CPPFLAGS := -Wall
 
-$(SRCDIR)/%.o: $(SRCDIR)/%.cpp
+$(OBJDIR)/%.o: $(SRCDIR)/%.cpp
+	mkdir -p $(OBJDIR)
 	$(CC) $(CPPFLAGS) -c -o $@ $<	
 
 aliens_main: $(OBJ_FILES)
 	g++ -o $@ $^
+	mkdir -p $(SRCDIR)
 	mkdir -p $(BUILDDIR)
 	mv aliens_main $(BUILDDIR)
     

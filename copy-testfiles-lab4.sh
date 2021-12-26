@@ -11,9 +11,6 @@ targetDir=${1%/}
 cp run-plain-lab4.sh ${targetDir}/
 
 # Create target directory, if it does not exist
-# mkdir -p $1/lab3-1/
-
-# Create target directory, if it does not exist
 mkdir -p $1/lab4-1/
 
 # Copy CMake's build-file, tests and their expected results

@@ -20,6 +20,15 @@ tests: circlist_main test01.txt test02.txt test03.txt test04.txt test05.txt test
 	$(OBJDIR)/circlist_main < test06.txt > test06.out.txt
 	$(OBJDIR)/circlist_main < test07.txt > test07.out.txt
 
+	
+compare: tests
+	diff -i -w -B test01.out.txt expected01.txt || true
+	diff -i -w -B test02.out.txt expected02.txt || true
+	diff -i -w -B test03.out.txt expected03.txt || true
+	diff -i -w -B test04.out.txt expected04.txt || true
+	diff -i -w -B test05.out.txt expected05.txt || true
+
+
 all: circlist_main
 	
 clean:
