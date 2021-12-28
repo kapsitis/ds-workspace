@@ -17,11 +17,11 @@ aliens_main: $(OBJ_FILES)
 	mv aliens_main $(BUILDDIR)
     
 tests: aliens_main test01.txt test02.txt test03.txt test04.txt test05.txt
-	$(OBJDIR)/aliens_main < test01.txt > test01.out.txt || true
-	$(OBJDIR)/aliens_main < test02.txt > test02.out.txt || true
-	$(OBJDIR)/aliens_main < test03.txt > test03.out.txt || true
-	$(OBJDIR)/aliens_main < test04.txt > test04.out.txt || true
-	$(OBJDIR)/aliens_main < test05.txt > test05.out.txt || true
+	$(BUILDDIR)/aliens_main < test01.txt > test01.out.txt || true
+	$(BUILDDIR)/aliens_main < test02.txt > test02.out.txt || true
+	$(BUILDDIR)/aliens_main < test03.txt > test03.out.txt || true
+	$(BUILDDIR)/aliens_main < test04.txt > test04.out.txt || true
+	$(BUILDDIR)/aliens_main < test05.txt > test05.out.txt || true
 	
 compare: tests
 	diff -i -w -B test01.out.txt expected01.txt || true
