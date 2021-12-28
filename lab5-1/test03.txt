@@ -1,0 +1,4 @@
+Test samples03/translation_new_international.txt
+Train samples03
+Extensions txt
+Window 5

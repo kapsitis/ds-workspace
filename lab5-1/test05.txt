@@ -1,0 +1,4 @@
+Test samples05/file1.txt
+Train samples05
+Extensions txt
+Window 4
