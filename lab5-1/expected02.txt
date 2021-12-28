@@ -1,0 +1,4 @@
+Length 23
+Overlap 7
+Percentage 30.4%
+15:22

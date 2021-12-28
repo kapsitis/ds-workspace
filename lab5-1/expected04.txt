@@ -1,0 +1,4 @@
+Length 40
+Overlap 20
+Percentage 50.0%
+10:30

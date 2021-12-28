@@ -17,11 +17,11 @@ text_analysis_main: $(OBJ_FILES)
 	mv text_analysis_main $(BUILDDIR)
     
 tests: text_analysis_main test01.txt test02.txt test03.txt test04.txt test05.txt
-	$(OBJDIR)/text_analysis_main < test01.txt > test01.out.txt || true
-	$(OBJDIR)/text_analysis_main < test02.txt > test02.out.txt || true
-	$(OBJDIR)/text_analysis_main < test03.txt > test03.out.txt || true
-	$(OBJDIR)/text_analysis_main < test04.txt > test04.out.txt || true
-	$(OBJDIR)/text_analysis_main < test05.txt > test05.out.txt || true
+	$(BUILDDIR)/text_analysis_main < test01.txt > test01.out.txt || true
+	$(BUILDDIR)/text_analysis_main < test02.txt > test02.out.txt || true
+	$(BUILDDIR)/text_analysis_main < test03.txt > test03.out.txt || true
+	$(BUILDDIR)/text_analysis_main < test04.txt > test04.out.txt || true
+	$(BUILDDIR)/text_analysis_main < test05.txt > test05.out.txt || true
 	
 compare: tests
 	diff -i -w -B test01.out.txt expected01.txt || true
